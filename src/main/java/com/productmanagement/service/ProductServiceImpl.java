@@ -40,5 +40,16 @@ public class ProductServiceImpl implements ProductService{
 		
 		return "Something went wrong!";
 	}
+
+	@Override
+	public Product updateProduct(Product product, Integer id) {
+		Product oldProduct = productRepo.findById(id).get();
+		oldProduct.setProductName(product.getProductName());
+		oldProduct.setProductDescription(product.getProductDescription());
+		oldProduct.setProductPrice(product.getProductPrice());
+		oldProduct.setProductStatus(product.getProductStatus());
+		return productRepo.save(oldProduct);
+	}
+	
 	
 }

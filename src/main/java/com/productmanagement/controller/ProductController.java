@@ -37,7 +37,12 @@ public class ProductController {
 	public ResponseEntity<?> deleteProduct(@PathVariable Integer id){
 		return new ResponseEntity<>(productService.deleteProduct(id),HttpStatus.OK);
 		
-	}	
+	}
+	
+	@PostMapping("/updateProduct/{id}")
+	public ResponseEntity<?> updateProductById(@RequestBody Product product, @PathVariable Integer id){
+		return new ResponseEntity<>(productService.updateProduct(product,id),HttpStatus.OK);
+	}
 	
 
 }
