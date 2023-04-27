@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const API_URL = "http://localhost:8080";
 
 class ProductService {
@@ -18,5 +20,6 @@ class ProductService {
     return axios.post(API_URL + "/" + product.id, product);
   }
 }
+
 
 export default new ProductService();
