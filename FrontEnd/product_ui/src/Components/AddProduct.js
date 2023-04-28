@@ -1,7 +1,7 @@
 import {useState,useEffect} from 'react';
 import ProductService from '../Services/ProductService';
 
-function Main() {
+function AddProduct() {
     
     const [msg,setmsg]=useState("");
     const [product,setProduct] = useState({
@@ -72,4 +72,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default AddProduct;
